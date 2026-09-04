@@ -1,0 +1,26 @@
+[
+    {
+        "id": "default_flute",
+        "title": "श्री कृष्ण बांसुरी धुन (Bansuri)",
+        "artist": "दिव्य बांसुरी",
+        "type": "procedural",
+        "src": ""
+    },
+    {
+        "id": "achyutam_keshavam",
+        "title": "अच्युतम केशवम (Achyutam Keshavam)",
+        "artist": "भक्ति संगीत",
+        "type": "audio",
+        "src": "https:\/\/actions.google.com\/sounds\/v1\/ambiences\/temple_bell_at_dusk.ogg"
+    },
+    {
+        "id": "bhajan_1788526178",
+        "title": "Test Flute Bhajan",
+        "artist": "भक्त स्वर",
+        "type": "audio",
+        "src": "Public\/bhajans\/Test_Flute_Bhajan_10c481.mp3",
+        "isLocal": true,
+        "originalUrl": "https:\/\/cdn.pixabay.com\/download\/audio\/2022\/05\/27\/audio_1808fbf07a.mp3?filename=meditation-flute-112190.mp3",
+        "createdAt": "2026-09-04 12:49:38"
+    }
+]
