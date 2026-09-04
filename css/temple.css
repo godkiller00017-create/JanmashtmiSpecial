@@ -1,0 +1,1093 @@
+/* 
+ * Krishna Mandir Jhula Ambiance & Aesthetics (Mobile-First Experience)
+ * Authentic Temple Sanctum Background, Devotional Landing Page,
+ * Masterpiece SVG Bal Krishna Model, and YouTube Devotional Music Player
+ */
+
+:root {
+    --gold-bright: #ffd700;
+    --gold-warm: #ffb300;
+    --gold-dark: #b27b00;
+    --saffron: #ff6f00;
+    --velvet-maroon: #680e1c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0a0402 url('../Public/temple_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Devanagari', Helvetica, Arial, sans-serif;
+    color: #fff9e6;
+    touch-action: none;
+    transition: filter 1.5s ease;
+}
+
+/* Atmospheric Temple Warm Vignette Overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 40%, rgba(255, 179, 0, 0.12) 0%, rgba(20, 8, 4, 0.45) 60%, rgba(10, 3, 2, 0.85) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Midnight Janmashtami Darshan Mode */
+body.night-mode {
+    filter: brightness(0.78) saturate(1.15) hue-rotate(-20deg);
+}
+
+body.night-mode::before {
+    background: radial-gradient(circle at 50% 40%, rgba(41, 98, 255, 0.15) 0%, rgba(10, 14, 38, 0.6) 60%, rgba(3, 4, 15, 0.92) 100%);
+}
+
+#temple-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+/* ==========================================================================
+   LANDING SCREEN (Govardhan Artwork, Sacred Typography & Auto-Redirection)
+   ========================================================================== */
+#landing-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px 40px;
+    background: #0c0503 url('../Public/Landing.jpg') no-repeat center center;
+    background-size: cover;
+    animation: slowKenBurns 20s infinite alternate ease-in-out;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s ease, visibility 1.2s;
+}
+
+@keyframes slowKenBurns {
+    0% { transform: scale(1.0); }
+    100% { transform: scale(1.06); }
+}
+
+#landing-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 45%, rgba(0, 0, 0, 0.35) 0%, rgba(15, 5, 2, 0.82) 75%, rgba(10, 2, 1, 0.96) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+#landing-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(1.12);
+}
+
+.landing-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 680px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.landing-shloka-top {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: #ffe082;
+    text-shadow: 0 0 12px #ffb300, 0 2px 8px #000;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.landing-title {
+    font-size: 2.2rem;
+    line-height: 1.35;
+    font-weight: 800;
+    background: linear-gradient(180deg, #fffde7 0%, #ffe082 45%, #ffb300 75%, #ff8f00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 25px rgba(255, 179, 0, 0.5));
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.landing-subtitle {
+    font-size: 1.1rem;
+    color: #ffecb3;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.landing-verse {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #fff9c4;
+    font-style: italic;
+    opacity: 0.92;
+    background: rgba(36, 12, 6, 0.65);
+    backdrop-filter: blur(8px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    margin-bottom: 24px;
+    max-width: 520px;
+}
+
+.landing-actions {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.btn-enter-mandir {
+    background: linear-gradient(180deg, #ffd54f 0%, #ff8f00 60%, #b27b00 100%);
+    color: #260a02;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 14px 38px;
+    border-radius: 35px;
+    border: 2px solid #fffde7;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 179, 0, 0.6);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: enterPulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes enterPulse {
+    0% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 179, 0, 0.4); }
+    100% { transform: scale(1.05); box-shadow: 0 10px 32px rgba(0, 0, 0, 0.9), 0 0 38px rgba(255, 215, 0, 0.8); }
+}
+
+.btn-enter-mandir:hover, .btn-enter-mandir:active {
+    background: linear-gradient(180deg, #fff9c4 0%, #ffb300 60%, #e65100 100%);
+    transform: scale(1.08);
+}
+
+.landing-countdown {
+    font-size: 0.85rem;
+    color: #ffe082;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px #000;
+    opacity: 0.9;
+}
+
+.countdown-number {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   TEMPLE SANCTUM (GARBHAGRIHA) HEADER & BELLS
+   ========================================================================== */
+.temple-header {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 40;
+    pointer-events: none;
+    padding: 0 16px;
+}
+
+.mantra-banner {
+    background: linear-gradient(90deg, transparent 0%, rgba(93, 11, 23, 0.85) 20%, rgba(93, 11, 23, 0.95) 50%, rgba(93, 11, 23, 0.85) 80%, transparent 100%);
+    padding: 5px 28px;
+    border-top: 1px solid rgba(255, 215, 0, 0.6);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.6);
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.mantra-banner h1 {
+    font-size: 1.15rem;
+    letter-spacing: 1.5px;
+    color: #fff6da;
+    text-shadow: 0 0 10px #ffb300, 0 0 20px #e65100;
+    font-weight: 700;
+}
+
+.sub-title {
+    font-size: 0.76rem;
+    letter-spacing: 2px;
+    color: #ffd54f;
+    margin-top: 2px;
+    text-transform: uppercase;
+    opacity: 0.95;
+}
+
+/* Hanging Garlands & Toran */
+.toran-garland {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    pointer-events: none;
+    z-index: 35;
+    background-image: radial-gradient(circle at 50% 0%, #ff8f00 5px, #f57f17 9px, transparent 10px);
+    background-size: 34px 34px;
+    background-repeat: repeat-x;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.6));
+}
+
+.mango-leaves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 36;
+    pointer-events: none;
+}
+
+.mango-leaf {
+    width: 12px;
+    height: 24px;
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    border-radius: 0 12px 12px 12px;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Hanging Temple Bells (Ghanti) */
+.hanging-bells-bar {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    z-index: 45;
+    pointer-events: auto;
+}
+
+.bell-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transform-origin: top center;
+    padding: 4px;
+}
+
+.bell-chain {
+    width: 3px;
+    height: 48px;
+    background: repeating-linear-gradient(to bottom, #ffd54f, #ff8f00 4px, #5d4037 6px);
+}
+
+.brass-bell {
+    width: 38px;
+    height: 42px;
+    filter: drop-shadow(0 5px 8px rgba(0,0,0,0.65));
+    transition: transform 0.1s ease;
+}
+
+.bell-ringing {
+    animation: ringSwing 1.1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes ringSwing {
+    0% { transform: rotate(0deg); }
+    15% { transform: rotate(26deg); }
+    30% { transform: rotate(-22deg); }
+    45% { transform: rotate(16deg); }
+    60% { transform: rotate(-12deg); }
+    75% { transform: rotate(7deg); }
+    90% { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Canvases */
+#physics-canvas, #particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#physics-canvas {
+    z-index: 20;
+    pointer-events: auto;
+}
+
+#particles-canvas {
+    z-index: 50;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   GRAND JHULA (SWING) CONTAINER
+   ========================================================================== */
+#jhula-seat-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 330px;
+    height: 350px;
+    margin-left: -165px;
+    pointer-events: auto;
+    cursor: grab;
+    z-index: 25;
+    will-change: transform;
+    transform-origin: center 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.75));
+    transition: filter 0.2s ease;
+}
+
+#jhula-seat-container:active {
+    cursor: grabbing;
+}
+
+.jhula-floor-shadow {
+    position: absolute;
+    bottom: -30px;
+    width: 290px;
+    height: 38px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.35) 50%, transparent 75%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    transition: transform 0.1s linear, opacity 0.1s linear;
+}
+
+.jhula-structure {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.jhula-canopy-arch {
+    position: absolute;
+    top: 6px;
+    width: 300px;
+    height: 72px;
+    pointer-events: none;
+    z-index: 28;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+}
+
+.jhula-cushion-wrapper {
+    position: absolute;
+    bottom: 20px;
+    width: 310px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 22;
+}
+
+.royal-gaddi {
+    width: 270px;
+    height: 50px;
+    background: radial-gradient(ellipse at center, #8a0c20 0%, #5d0614 70%, #360209 100%);
+    border-radius: 25px;
+    border: 2.5px solid var(--gold-bright);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.8), inset 0 2px 10px rgba(255, 215, 0, 0.35);
+    position: relative;
+}
+
+.royal-gaddi::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    right: 6px;
+    bottom: 4px;
+    border: 1px dashed #ffd700;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+
+.bolster-left, .bolster-right {
+    position: absolute;
+    width: 50px;
+    height: 32px;
+    background: linear-gradient(135deg, #ffd54f 0%, #ff8f00 50%, #b27b00 100%);
+    border-radius: 16px;
+    border: 1.5px solid #fff9c4;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    top: -12px;
+    z-index: 23;
+}
+.bolster-left { left: 8px; }
+.bolster-right { right: 8px; }
+
+.jhula-carved-base {
+    position: absolute;
+    bottom: 2px;
+    width: 320px;
+    height: 32px;
+    z-index: 21;
+}
+
+/* ==========================================================================
+   MASTERPIECE DETAILED SVG BAL KRISHNA MODEL
+   ========================================================================== */
+.bal-gopal-wrapper {
+    position: absolute;
+    bottom: 48px;
+    width: 270px;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 24;
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.divine-aura {
+    position: absolute;
+    top: 20px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 238, 88, 0.48) 0%, rgba(255, 179, 0, 0.28) 45%, rgba(255, 111, 0, 0) 75%);
+    animation: auraPulse 3s infinite alternate ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes auraPulse {
+    0% { transform: scale(0.95); opacity: 0.75; filter: blur(3px); }
+    100% { transform: scale(1.14); opacity: 1; filter: blur(7px); }
+}
+
+.bal-gopal-svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.75));
+}
+
+/* Emotional States on SVG Model */
+.is-happy .gopal-mouth-normal { display: none !important; }
+.is-happy .gopal-mouth-happy { display: inline !important; }
+.is-happy .gopal-eye-open { display: none !important; }
+.is-happy .gopal-eye-happy { display: inline !important; }
+.is-happy .gopal-head-group {
+    animation: svgHappyBob 0.65s infinite alternate ease-in-out;
+    transform-origin: 135px 115px;
+}
+
+@keyframes svgHappyBob {
+    0% { transform: translateY(0) rotate(-1.5deg); }
+    100% { transform: translateY(-3px) rotate(2deg); }
+}
+
+.is-reaching {
+    transform: rotate(3.5deg) translateX(10px);
+}
+
+.is-reaching .gopal-arm-normal { display: none !important; }
+.is-reaching .gopal-arm-reaching { display: inline !important; }
+.is-reaching .gopal-head-group {
+    transform: rotate(5deg) translateY(2px);
+    transition: transform 0.4s ease-out;
+}
+
+.gopal-mouth-happy { display: none; }
+.gopal-eye-happy { display: none; }
+.gopal-arm-reaching { display: none; }
+
+/* Temple Floor & Rangoli */
+.temple-floor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to top, rgba(9, 4, 3, 0.95) 0%, rgba(26, 11, 6, 0.8) 40%, rgba(42, 17, 9, 0.4) 85%, transparent 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 24px;
+    z-index: 8;
+    pointer-events: none;
+}
+
+.rangoli-mat {
+    width: 320px;
+    height: 60px;
+    background: radial-gradient(ellipse at center, rgba(255, 179, 0, 0.35) 0%, rgba(194, 24, 91, 0.25) 45%, transparent 75%);
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+/* Interactive Aarti Thali */
+#aarti-thali {
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff9c4 0%, #ffb300 45%, #ff6f00 80%, #5d4037 100%);
+    border: 2.5px solid #fffde7;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.8), 0 0 20px #ff9800;
+    z-index: 60;
+    display: none;
+    cursor: grab;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+}
+
+#aarti-thali:active {
+    cursor: grabbing;
+}
+
+.aarti-diya-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 0%, #ffeb3b 40%, #ff5722 80%);
+    box-shadow: 0 0 12px #ff9800;
+}
+
+.aarti-flame {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 24px;
+    background: radial-gradient(ellipse at 50% 80%, #ffffff 0%, #ffeb3b 30%, #ff5722 75%, transparent 100%);
+    border-radius: 50% 50% 20% 20%;
+    animation: flicker 0.12s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { transform: scale(1) rotate(-1.5deg); opacity: 0.94; }
+    50% { transform: scale(1.06, 0.97) rotate(1.2deg); opacity: 1; }
+    100% { transform: scale(0.95, 1.05) rotate(-0.5deg); opacity: 0.9; }
+}
+
+/* ==========================================================================
+   UNIFIED BOTTOM DEVOTIONAL PANEL (MUSIC PLAYER + SEVA RITUAL DOCK)
+   ========================================================================== */
+.bottom-panel {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(94vw, 440px);
+    background: linear-gradient(180deg, rgba(28, 12, 6, 0.94) 0%, rgba(14, 6, 3, 0.97) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 22px;
+    border: 1.2px solid rgba(255, 215, 0, 0.4);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 235, 59, 0.25);
+    z-index: 70;
+    display: flex;
+    flex-direction: column;
+    padding: 7px 12px 6px 12px;
+    gap: 4px;
+    box-sizing: border-box;
+}
+
+/* Row 1: Now Playing Music Bar */
+.now-playing-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+}
+
+.np-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
+}
+
+/* Vinyl Disc with Golden Peacok Feather */
+.np-disc {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #2d1808 30%, #ffd54f 32%, #1a0c04 36%, #ffb300 38%, #120803 70%, #ff8f00 72%, #260f05 100%);
+    border: 1.5px solid #ffb300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.np-disc-inner {
+    font-size: 0.85rem;
+    line-height: 1;
+}
+
+.np-disc.spinning {
+    animation: spinVinyl 5s linear infinite;
+}
+
+@keyframes spinVinyl {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.np-track-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.np-label {
+    font-size: 0.54rem;
+    color: #ffab40;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.np-title-scroll {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.np-title {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #fff9c4;
+    letter-spacing: 0.2px;
+}
+
+/* Music Controls */
+.np-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.np-btn {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: #ffe082;
+    font-size: 0.72rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.2s ease;
+}
+
+.np-btn:hover {
+    background: rgba(255, 215, 0, 0.25);
+    color: #ffffff;
+    transform: scale(1.12);
+}
+
+.np-btn-play {
+    width: 31px;
+    height: 31px;
+    background: linear-gradient(135deg, #ffd54f 0%, #ff8f00 100%);
+    border: 1px solid #fff9c4;
+    color: #3e2723;
+    font-size: 0.82rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(255, 179, 0, 0.45);
+}
+
+.np-btn-play:hover {
+    background: linear-gradient(135deg, #fff9c4 0%, #ffb300 100%);
+    transform: scale(1.15);
+}
+
+.np-btn-add {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e53935 0%, #b71c1c 100%);
+    border: 1px solid #ff8a80;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 2px 6px rgba(183, 28, 28, 0.5);
+    transition: all 0.2s ease;
+}
+
+.np-btn-add:hover {
+    background: linear-gradient(135deg, #ff5252 0%, #d50000 100%);
+    transform: scale(1.12);
+}
+
+/* Sacred Golden Divider */
+.bottom-panel-divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.35) 20%, rgba(255, 215, 0, 0.6) 50%, rgba(255, 215, 0, 0.35) 80%, transparent 100%);
+    margin: 2px 0 3px 0;
+}
+
+/* Row 2: Seva Ritual Buttons */
+.seva-dock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2px;
+}
+
+.seva-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 3px 2px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #ffecb3;
+    gap: 2px;
+    transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.seva-icon {
+    font-size: 1.15rem;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.6));
+    transition: transform 0.2s ease;
+    line-height: 1;
+}
+
+.seva-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: #ffe082;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.seva-btn:hover {
+    background: rgba(255, 215, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.seva-btn:hover .seva-icon {
+    transform: scale(1.2);
+}
+
+.seva-btn.active {
+    background: linear-gradient(180deg, rgba(255, 215, 0, 0.25) 0%, rgba(255, 179, 0, 0.1) 100%);
+    color: #fffde7;
+    border: 1px solid rgba(255, 215, 0, 0.45);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.35);
+}
+
+/* Off-screen active YouTube Iframe container (Plays audio uninterrupted without showing video) */
+.yt-mini-player-frame {
+    position: fixed !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 200px !important;
+    height: 200px !important;
+    opacity: 0.001 !important;
+    pointer-events: none !important;
+    z-index: -999 !important;
+}
+
+.yt-mini-player-frame iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+}
+
+/* Modal Dialog for Adding YouTube Bhajan */
+#bhajan-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#bhajan-modal.show {
+    display: flex;
+}
+
+.modal-box {
+    background: linear-gradient(180deg, #3d140e 0%, #1c0805 100%);
+    border: 2px solid var(--gold-bright);
+    border-radius: 20px;
+    padding: 24px;
+    max-width: 440px;
+    width: 100%;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 179, 0, 0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    padding-bottom: 10px;
+}
+
+.modal-header h3 {
+    font-size: 1.15rem;
+    color: #fff9c4;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: #ffd54f;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.modal-input-group label {
+    font-size: 0.8rem;
+    color: #ffd54f;
+    font-weight: 600;
+}
+
+.modal-input {
+    background: rgba(10, 3, 2, 0.75);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    border-radius: 8px;
+    padding: 9px 12px;
+    color: #ffffff;
+    font-size: 0.88rem;
+    outline: none;
+}
+
+.modal-input:focus {
+    border-color: var(--gold-bright);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.modal-presets {
+    font-size: 0.76rem;
+    color: #ffe082;
+}
+
+.preset-chip {
+    display: inline-block;
+    background: rgba(255, 215, 0, 0.15);
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin: 3px 2px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.preset-chip:hover {
+    background: rgba(255, 215, 0, 0.35);
+}
+
+.btn-modal-save {
+    background: linear-gradient(180deg, #ff1744 0%, #b71c1c 100%);
+    color: #ffffff;
+    border: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 11px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    transition: all 0.2s ease;
+}
+
+.btn-modal-save:hover {
+    background: linear-gradient(180deg, #ff5252 0%, #d50000 100%);
+    transform: translateY(-1px);
+}
+
+#temple-toast {
+    position: absolute;
+    top: 95px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-15px);
+    background: rgba(93, 11, 23, 0.94);
+    backdrop-filter: blur(8px);
+    color: #fff9c4;
+    padding: 6px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--gold-bright);
+    font-weight: 600;
+    font-size: 0.86rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    z-index: 80;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-out;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#temple-toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (min-width: 768px) {
+    .mantra-banner h1 { font-size: 1.35rem; }
+    .sub-title { font-size: 0.85rem; }
+    .brass-bell { width: 44px; height: 48px; }
+    #jhula-seat-container {
+        width: 380px;
+        height: 390px;
+        margin-left: -190px;
+    }
+    .jhula-canopy-arch { width: 340px; height: 80px; }
+    .jhula-cushion-wrapper { width: 350px; }
+    .royal-gaddi { width: 300px; height: 54px; }
+    .bolster-left, .bolster-right { width: 54px; height: 34px; }
+    .jhula-carved-base { width: 360px; }
+    .bal-gopal-wrapper { width: 300px; height: 320px; bottom: 52px; }
+    .landing-title { font-size: 3rem; }
+    .bottom-panel {
+        width: 460px;
+        bottom: 16px;
+        padding: 8px 16px 7px 16px;
+        gap: 6px;
+    }
+    .seva-btn { padding: 5px 6px; }
+    .seva-icon { font-size: 1.3rem; }
+    .seva-label { font-size: 0.68rem; }
+}
+
+@media (max-width: 480px) {
+    .landing-title { font-size: 1.75rem; }
+    .landing-subtitle { font-size: 0.95rem; }
+    .landing-verse { font-size: 0.82rem; padding: 8px 14px; }
+    .btn-enter-mandir { font-size: 1.0rem; padding: 12px 28px; }
+    .mantra-banner { padding: 4px 14px; }
+    .mantra-banner h1 { font-size: 0.95rem; }
+    .sub-title { font-size: 0.66rem; letter-spacing: 1px; }
+    .hanging-bells-bar { padding: 0 3%; }
+    #jhula-seat-container {
+        width: 320px;
+        height: 340px;
+        margin-left: -160px;
+        transform-origin: center 260px;
+    }
+    .bottom-panel {
+        width: calc(100% - 16px);
+        bottom: 10px;
+        padding: 6px 10px 5px 10px;
+        gap: 3px;
+        border-radius: 20px;
+    }
+    .np-title { font-size: 0.7rem; }
+    .np-title-scroll { max-width: 135px; }
+    .seva-icon { font-size: 1.1rem; }
+    .seva-label { font-size: 0.58rem; }
+    .seva-btn { padding: 2px 1px; }
+}
